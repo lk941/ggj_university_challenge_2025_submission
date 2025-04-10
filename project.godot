@@ -1,0 +1,22 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="plantsandspace"
+run/main_scene="uid://dg6u45cc1s3hj"
+config/features=PackedStringArray("4.4", "Mobile")
+boot_splash/bg_color=Color(0.282353, 0.407843, 0.34902, 1)
+boot_splash/image="uid://duk6vv7d5oy0h"
+config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="mobile"
