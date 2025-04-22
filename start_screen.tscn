@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcsiscgswdva7"]
+
+[ext_resource type="Script" uid="uid://c7yy064y4ajs7" path="res://start_screen.gd" id="1_afy8x"]
+[ext_resource type="SpriteFrames" uid="uid://djis5bkehanrq" path="res://start_screen.tres" id="2_afy8x"]
+[ext_resource type="Script" uid="uid://w4rbkj6fqcok" path="res://animated_sprite_2d.gd" id="2_pevhg"]
+[ext_resource type="Theme" uid="uid://f012v6yt1otr" path="res://themes/default_style.tres" id="4_k1na2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdywr"]
+bg_color = Color(0.945098, 0.921569, 0.858824, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.533333, 0.431373, 0.415686, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="StartScreen" type="Control"]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_afy8x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.705882, 0.780392, 0.666667, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+top_level = true
+position = Vector2(628, 355)
+sprite_frames = ExtResource("2_afy8x")
+script = ExtResource("2_pevhg")
+
+[node name="Button" type="Button" parent="ColorRect"]
+z_index = 20
+custom_minimum_size = Vector2(110, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 932.0
+offset_top = 533.0
+offset_right = -100.0
+offset_bottom = -65.0
+theme = ExtResource("4_k1na2")
+theme_override_colors/font_color = Color(0.211653, 0.119418, 0.0807236, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_vdywr")
+text = "Start"

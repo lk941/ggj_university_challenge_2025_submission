@@ -11,11 +11,15 @@ config_version=5
 [application]
 
 config/name="plantsandspace"
-run/main_scene="uid://dg6u45cc1s3hj"
+run/main_scene="uid://bcsiscgswdva7"
 config/features=PackedStringArray("4.4", "Mobile")
 boot_splash/bg_color=Color(0.282353, 0.407843, 0.34902, 1)
 boot_splash/image="uid://duk6vv7d5oy0h"
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [rendering]
 
