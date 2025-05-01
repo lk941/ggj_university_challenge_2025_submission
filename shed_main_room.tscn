@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhs7gfxvosgjd"]
+
+[ext_resource type="Texture2D" uid="uid://cjyqucxvscdrh" path="res://screens/main_room_draft.png" id="1_7odqo"]
+[ext_resource type="PackedScene" uid="uid://vpxi726cru5u" path="res://sprites/player/player.tscn" id="2_m87fa"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lfolu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgng4"]
+size = Vector2(1862.5, 295)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7odqo"]
+size = Vector2(330, 533.751)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m87fa"]
+size = Vector2(492.5, 1630)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2880.0
+offset_bottom = 1620.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_7odqo")
+
+[node name="wall" type="StaticBody2D" parent="TextureRect"]
+physics_material_override = SubResource("PhysicsMaterial_lfolu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/wall"]
+position = Vector2(1420, 140)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_mgng4")
+
+[node name="table" type="StaticBody2D" parent="TextureRect"]
+physics_material_override = SubResource("PhysicsMaterial_lfolu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/table"]
+position = Vector2(2187.5, 1045.62)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_7odqo")
+
+[node name="border1" type="StaticBody2D" parent="TextureRect"]
+physics_material_override = SubResource("PhysicsMaterial_lfolu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/border1"]
+position = Vector2(236.25, 805)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_m87fa")
+
+[node name="border2" type="StaticBody2D" parent="TextureRect"]
+physics_material_override = SubResource("PhysicsMaterial_lfolu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/border2"]
+position = Vector2(2600, 815)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_m87fa")
+
+[node name="border3" type="StaticBody2D" parent="TextureRect"]
+physics_material_override = SubResource("PhysicsMaterial_lfolu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/border3"]
+position = Vector2(1500, 1600)
+scale = Vector2(1, 1)
+skew = -1.56905
+shape = SubResource("RectangleShape2D_m87fa")
+
+[node name="Player2D" parent="." instance=ExtResource("2_m87fa")]
+position = Vector2(-19, -86)
+scale = Vector2(0.8, 0.8)
